@@ -23,7 +23,7 @@ KEY3:
 
   it do
     expect {
-      schema.validate({
+      schema.validate!({
         'KEY1' => 'VALUE1',
         'KEY2' => 'VALUE2',
         'KEY3' => 'VALUE3'
@@ -33,7 +33,7 @@ KEY3:
 
   it do
     expect {
-      schema.validate({
+      schema.validate!({
         'KEY1' => 'VALUE1',
         'KEY3' => 'VALUE3'
       })
