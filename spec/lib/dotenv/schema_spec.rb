@@ -1,7 +1,7 @@
 require 'spec_helper'
-require 'env_schema/schema'
+require 'dotenv/schema'
 
-describe EnvSchema::Schema do
+describe Dotenv::Schema do
   let(:schema) {
     described_class.load file <<-END
 KEY1:
@@ -37,6 +37,6 @@ KEY3:
         'KEY1' => 'VALUE1',
         'KEY3' => 'VALUE3'
       })
-    }.to raise_error(EnvSchema::ValidationError)
+    }.to raise_error(Dotenv::Schema::ValidationError)
   end
 end

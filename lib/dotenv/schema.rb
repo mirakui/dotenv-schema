@@ -1,8 +1,9 @@
 require 'yaml'
 
-module EnvSchema
-  class ValidationError < StandardError; end
+module Dotenv
   class Schema < Hash
+    class ValidationError < StandardError; end
+
     def initialize(hash={})
       self.replace hash if hash
     end
