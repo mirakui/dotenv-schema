@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'dotenv/schema/version'
+require 'env_schema/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "dotenv-schema"
-  spec.version       = Dotenv::Schema::VERSION
+  spec.name          = "env_schema"
+  spec.version       = EnvSchema::VERSION
   spec.authors       = ["Issei Naruta"]
   spec.email         = ["naruta@cookpad.com"]
   spec.description   = %q{TODO: Write a gem description}
