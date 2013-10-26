@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+gemspec :name => 'dotenv-schema'
 
-# Specify your gem's dependencies in dotenv-schema.gemspec
-gemspec
+gem 'guard-rspec'
+gem 'guard-bundler'
+gem 'rb-fsevent'
