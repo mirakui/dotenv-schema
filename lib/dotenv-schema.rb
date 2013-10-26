@@ -2,20 +2,24 @@ require 'dotenv'
 require 'dotenv/schema'
 
 module Dotenv
-  def self.load_with_validation(*filenames)
-    env_before = ENV.to_h
-    load *filenames
-    env = ENV.to_h.reject {|k, v| env_before.has_key?(k) }
+  class << self
+    def load_with_validation(*filenames)
+      env_before = ENV.to_h
+      load_without_validation *filenames
+      env = ENV.to_h.reject {|k, v| env_before.has_key?(k) }
 
-    schema = Schema.load schema_path
-    schema.validate! env
-  end
+      schema = Schema.load schema_path
+      schema.validate! env
+    end
+    alias_method :load_without_validation, :load
+    alias_method :load, :load_with_validation
 
-  def self.schema_path=(path)
-    @schema_path = path
-  end
+    def schema_path=(path)
+      @schema_path = path
+    end
 
-  def self.schema_path
-    @schema_path || '.env_schema'
+    def schema_path
+      @schema_path || '.env_schema'
+    end
   end
 end

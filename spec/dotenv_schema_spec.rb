@@ -21,7 +21,7 @@ KEY3:
 
   it do
     expect {
-      Dotenv.load_with_validation file <<-END
+      Dotenv.load file <<-END
 KEY1=value1
 KEY2=value2
 KEY3=value3
@@ -31,7 +31,7 @@ KEY3=value3
 
   it do
     expect {
-      Dotenv.load_with_validation file <<-END
+      Dotenv.load file <<-END
 KEY1=value1
 KEY3=value3
       END
@@ -40,7 +40,7 @@ KEY3=value3
 
   it do
     expect {
-      Dotenv.load_with_validation file <<-END
+      Dotenv.load file <<-END
 KEY1=
 KEY2=value2
 KEY3=value3
@@ -50,7 +50,7 @@ KEY3=value3
 
   it do
     expect {
-      Dotenv.load_with_validation file <<-END
+      Dotenv.load file <<-END
 KEY1=value1
 KEY2=value2
 KEY3=
@@ -60,7 +60,7 @@ KEY3=
 
   it do
     expect {
-      Dotenv.load_with_validation file <<-END
+      Dotenv.load file <<-END
 KEY1=value1
 KEY2=
 KEY3=value3
@@ -70,7 +70,7 @@ KEY3=value3
 
   it do
     expect {
-      Dotenv.load_with_validation file <<-END
+      Dotenv.load file <<-END
 KEY2=value2
 KEY3=value3
       END
@@ -79,7 +79,7 @@ KEY3=value3
 
   it do
     expect {
-      Dotenv.load_with_validation file <<-END
+      Dotenv.load file <<-END
 KEY1=value1
 KEY2=value2
 KEY3=value3
