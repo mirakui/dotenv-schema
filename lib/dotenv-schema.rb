@@ -4,9 +4,9 @@ require 'dotenv/schema'
 module Dotenv
   class << self
     def load_with_validation(*filenames)
-      env_before = ENV.to_h
+      env_before = ENV.to_hash
       load_without_validation *filenames
-      env = ENV.to_h.reject {|k, v| env_before.has_key?(k) }
+      env = ENV.to_hash.reject {|k, v| env_before.has_key?(k) }
 
       schema = Schema.load schema_path
       schema.validate! env
