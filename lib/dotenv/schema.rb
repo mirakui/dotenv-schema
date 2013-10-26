@@ -1,3 +1,4 @@
+require 'dotenv-schema'
 require 'yaml'
 
 module Dotenv
@@ -15,7 +16,7 @@ module Dotenv
     def validate!(env)
       undefined_keys = env.keys - keys
       unless undefined_keys.empty?
-        raise ValidationError, "Undefined variable(s): #{undefined_keys.join(', ')}"
+        raise ValidationError, "Undefined variable(s): #{undefined_keys.join(', ')}; Please add them into #{Dotenv.schema_path}"
       end
       each do |key, options|
         if env[key] == '' && (options && !options['allow_empty_string'] || !options)
