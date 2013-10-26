@@ -20,6 +20,7 @@ Add this line to your application's Gemfile:
 
 ```ruby
 gem 'dotenv-shcmea-rails'
+# DO NOT load dotenv-rails gem! Use dotenv-schema-rails instead.
 ```
 
 And then execute:
