@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'dotenv-schema/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "dotenv-schema"
+  spec.name          = "dotenv-schema-rails"
   spec.version       = Dotenv::SCHEMA_VERSION
   spec.authors       = ["Issei Naruta"]
   spec.email         = ["naruta@cookpad.com"]
