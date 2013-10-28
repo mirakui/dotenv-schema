@@ -19,7 +19,7 @@ DB_PORT:
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'dotenv-shcmea-rails'
+gem 'dotenv-schema-rails'
 # DO NOT load dotenv-rails gem! Use dotenv-schema-rails instead.
 ```
 
