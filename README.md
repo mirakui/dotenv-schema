@@ -28,7 +28,7 @@ And then execute:
 $ bundle
 $ rails server
 ```
-It fails Dotenv::Schema::ValidationError if the validation failed.
+It raises Dotenv::Schema::ValidationError if the validation failed.
 
 ### Sinatra or Plain ol' Ruby
 ```
@@ -41,10 +41,10 @@ Dotenv.load # raises Dotenv::Schema::ValidationError if the validation failed.
 ```
 
 ## Schema validation rule and `.env_schema` format
-`.env_schema` is based on YAML format.
+`.env_schema` is written in YAML format.
 
 ### Basic rule
-It fails validation If any variables which are defined in `.env_schema` don't exist in `.env`.
+Validation fails when all variable names that defined in `.env_schema` don't exist in `.env`.
 ```shell
 # .env_schema
 DB_HOST:
@@ -55,7 +55,7 @@ DB_HOST=db.example.com
 # => Dotenv::Schema::ValidationError: ENV['DB_PORT'] must exist
 ```
 
-It fails validation If any variables which aren't defined in `.env_schema` exist in `.env`.
+Validation fails if any variables which not defined in `.env_schema` are defined in `.env`.
 ```shell
 # .env_schema
 DB_HOST:
@@ -67,7 +67,7 @@ DB_PORT=3306
 ```
 
 ### To allow empty string
-In default, it fails if any environment variables in `.env` are empty string.
+In default, validation fails when any variable in `.env` is empty string.
 ```shell
 # .env_schema
 DB_HOST:
